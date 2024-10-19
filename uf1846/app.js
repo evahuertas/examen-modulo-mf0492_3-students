@@ -26,7 +26,7 @@ app.get('/', async (req, res) => {
 // Endpoint 1: Obtener todos los pacientes en formato JSON en la ruta /api/patients
 app.get('/api/patients', async (req, res) => {
     try {
-        const patients = [];
+        const patients = await Patient.find();
         res.json({
             message: "Query executed successfully",
             results: patients
