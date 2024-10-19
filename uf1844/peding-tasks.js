@@ -1,6 +1,8 @@
 
-function filterPendingTaks(tasks) {
+// NOTA: para comprobar el código deberá escribirse en terminal el comando 'node peding-tasks.js' en lugar de 'node pending-tasks.js', porque hay un typo en el nombre del archivo
 
+function filterPendingTaks(tasks) {
+  return tasks.filter(task => !task.completed);
 }
 
 const tasks = [
@@ -17,3 +19,5 @@ console.log(result);
   { task: "Exercise", completed: false },
   { task: "Study programming", completed: false }
  */
+
+
