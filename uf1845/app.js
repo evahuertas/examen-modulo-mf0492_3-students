@@ -55,7 +55,7 @@ async function main() {
             {},
             { projection: { title: 1, year: 1, _id: 0 } }
         )
-            .sort({/** FILL ME */ })
+            .sort({ year: 1 }) // ordena de forma ascendente por "year" pero se repite un título
             .limit(3)
             .toArray();
         console.log('Consulta 4 - Películas ordenadas por año de forma creciente:', orderedMovies);
