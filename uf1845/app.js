@@ -22,7 +22,7 @@ async function main() {
 
         // Consulta 1: Encuentra 3 películas del género "Action", mostrando solo título y género. 
         const actionMovies = await collection.find(
-            {/** FILL ME */ },
+            { genres: 'Action' },
             { projection: { title: 1, genres: 1, _id: 0 } }
         )
             .sort({ year: -1 })
