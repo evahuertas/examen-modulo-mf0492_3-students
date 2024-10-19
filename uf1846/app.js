@@ -44,8 +44,10 @@ app.get('/form', (req, res) => {
 // Endpoint 3: Verificar si el paciente existe y mostrar información
 app.get('/check', async (req, res) => {
     
+    const ssn = req.query.ssn; // obtiene el número de la seguridad social
+
     try {
-        const patient = await Patient.findOne();
+        const patient = await Patient.findOne({ ssn: ssn });
         console.log("🚀 ~ file: app.js:52 ~ app.get ~ patient:", patient)
 
         if (patient) {
