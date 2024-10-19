@@ -32,7 +32,7 @@ async function main() {
 
         // Consulta 2: Encuentra 3 películas dirigidas por "Christopher Nolan", mostrando solo título y director
         const nolanMovies = await collection.find(
-            { /** FILL ME */ },
+            { directors: 'Christopher Nolan' },
             { projection: { title: 1, directors: 1, _id: 0 } }
         )
             .sort({ year: -1 })
