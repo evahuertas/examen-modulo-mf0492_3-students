@@ -42,7 +42,7 @@ async function main() {
 
         // Consulta 3: Encuentra 3 películas de los años 2000 o más recientes, mostrando título y año
         const recentMovies = await collection.find(
-            { /** FILL ME */ },
+            { year: { $gte: 2000 } },
             { projection: { title: 1, year: 1, _id: 0 } }
         )
             .sort({ year: -1 })  // Ordena por año de manera descendente (más recientes primero)
